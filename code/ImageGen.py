@@ -8,9 +8,16 @@ class ImageGen():
     def __init__(self, max_x, max_y):
         self.max_x = max_x
         self.max_y = max_y
+        self.initCleanImage()
+        self.storage_path = '../data'
+
+    def initCleanImage(self):
         self.fig, self.ax = plt.subplots()
-        self.ax.set_xlim(0, max_x)
-        self.ax.set_ylim(0, max_y)
+        self.ax.set_xlim(0, self.max_x)
+        self.ax.set_ylim(0, self.max_y)
+
+    def setStoragePath(self, path):
+        self.storage_path = path
 
     def plot2dArray(self, points, format, alpha=1):
         for p in points:
@@ -29,7 +36,7 @@ class ImageGen():
         return str((t - datetime.datetime(1970,1,1)).total_seconds()).replace('.', '')
 
     # scatter
-    def example_1(self):
+    def __example_1(self):
         n = 1024
         X = np.random.normal(0, 1, n)
         Y = np.random.normal(0, 1, n)
@@ -46,11 +53,11 @@ class ImageGen():
         plt.show()
 
     # single point
-    def example_2(self):
+    def __example_2(self):
         # matplotlib.rcParams['axes.unicode_minus'] = False
         fig, ax = plt.subplots()
-        ax.set_xlim(v_min, v_max)
-        ax.set_ylim(v_min, v_max)
+        ax.set_xlim(self.v_min, self.v_max)
+        ax.set_ylim(self.v_min, self.v_max)
         ax.plot(10, 20, 'r.')
         ax.plot()
         plt.show()

@@ -11,13 +11,15 @@ center_1 = np.array([[v_max * .95, v_max * .95]])
 center_2 = np.array([[v_max * .05, v_max * .05]])
 
 imgg = ImageGen.ImageGen(v_max, v_max)
+imgg.setStoragePath('../data/images-run-1')
 
 imgg.plot2dArray(center_1, 'ro')
 imgg.plot2dArray(center_2, 'go')
 imgg.plot2dArray(data, 'bo', .5)
-imgg.store('../data/images-run-1')
+imgg.store()
+imgg.initCleanImage()
 
 center_changed = True
 while center_changed:
-
-
+    #TODO add algorithm
+    exit(0)

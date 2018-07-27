@@ -1,6 +1,6 @@
 # k-nearest neighbours algorithm
 # Theorie: https://www.youtube.com/watch?v=FghB26KmQG0
-# Mathematik: https://www.youtube.com/watch?v=gMq4goRUg4k  
+# Algorithmus: https://www.youtube.com/watch?v=gMq4goRUg4k
 # Pseudo-Code: https://www.youtube.com/watch?v=1HZU5pHGOCY
 
 # x_i = vector
@@ -12,7 +12,7 @@
 def calcKnn(x_i, data, d, k, dist_alg, weighted):
     
     k_nearest = []
-    # x_j = [a_1, a_2, ... , a_n-1=1(pos)/-2(neg), a_n=distance]
+    # x_j = [a_1, a_2, ... , a_n-1=1(pos)/-1(neg), a_n=distance]
     positive = 0
     
     for x_j in data:
